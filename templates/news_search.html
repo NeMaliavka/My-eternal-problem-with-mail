@@ -1,0 +1,18 @@
+{% extends 'default.html' %}
+{% load my_filters %}
+
+{% block content %}
+    <h1>Поиск новостей</h1>
+    <form method="get">
+        {{ filter.form.as_p }}
+        <button type="submit">Искать</button>
+    </form>
+
+    <h2>Результаты поиска</h2>
+    {% for article in filter.qs %}
+        <h2><a href="{% url 'news_detail' article.id %}">{{ article.title|censor }}</a></h2>
+        <p>{{ article.created_at|date:"d.m.Y" }}</p>
+    {% empty %}
+        <p>Нет новостей, соответствующих критериям поиска.</p>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends "main.html" %}
+
+{% block content %}
+<h2>Страница авторизованного пользователя {{ request.user.username }}</h2>
+<div>Здесь может содержаться персональная информация для каждого пользователя</div>
+
+<h3>Выбор интересующей категории новостей:</h3>
+<ul>
+    {% for category in categories %}
+        <li><a href="{% url 'category_detail' category.id %}">{{ category.name }}</a></li>
+    {% endfor %}
+</ul>
+
+<h3>Последние новости:</h3>
+<ul>
+    {% for post in latest_posts %}
+        <li><a href="{% url 'news_detail' post.id %}">{{ post.title }}</a></li>
+    {% endfor %}
+</ul>
+
+{% if is_not_author %}
+    <button><a href="{% url 'sign:upgrade' %}">Хочу стать Author!</a></button>
+{% endif %}
+
+{% if is_author %}
+    <button><a href="{% url 'post_create' %}">Создать новую статью</a></button>
+{% endif %}
+
+<form action="{% url 'logout' %}" method="post">
+    {% csrf_token %}
+    <input type="submit" value="Выйти">
+</form>
+{% endblock %}

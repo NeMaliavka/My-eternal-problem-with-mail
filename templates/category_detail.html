@@ -1,0 +1,32 @@
+<h1>{{ category.name }}</h1>
+
+{% if user.is_authenticated %}
+    {% if user in category.subscribers.all %}
+        <form action="{% url 'subscribe_to_category' category.id %}" method="post">
+            {% csrf_token %}
+            <button type="submit">Отписаться</button>
+        </form>
+    {% else %}
+        <form action="{% url 'subscribe_to_category' category.id %}" method="post">
+            {% csrf_token %}
+            <button type="submit">Подписаться</button>
+        </form>
+    {% endif %}
+{% endif %}
+<h2>Посты в этой категории:</h2>
+<ul>
+    {% for post in posts %}
+        <li><a href="{% url 'news_detail' post.id %}">{{ post.title }}</a></li>
+    {% endfor %}
+</ul>
+<a href="{% url 'news' %}">Назад к новостям</a>
+<!-- Отображение постов в категории -->
+<!--{% block content %}-->
+<!--<h2>Посты в этой категории:</h2>-->
+<!--<ul>-->
+<!--    {% for post in posts %}-->
+<!--        <li><a href="{% url 'news_detail' post.id %}">{{ post.title }}</a></li>-->
+<!--    {% endfor %}-->
+<!--</ul>-->
+<!--<a href="{% url 'news' %}">Назад к новостям</a>-->
+<!--{% endblock %}-->
