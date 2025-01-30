@@ -67,7 +67,7 @@ def post_create(request):
                 msg = EmailMultiAlternatives(
                     subject=post.title,
                     body=f"Здравствуй, {user.username}. Новая статья в твоём любимом разделе!",
-                    from_email='alisermolova@yandex.ru',
+                    from_email='alice-for-me@yandex.ru',
                     to=[user.email],
                 )
                 msg.attach_alternative(html_content, "text/html")
