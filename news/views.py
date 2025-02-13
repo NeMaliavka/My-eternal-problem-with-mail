@@ -7,6 +7,8 @@ from .forms import PostForm
 from django.contrib.auth.decorators import login_required
 from django.core.mail import EmailMultiAlternatives
 from django.template.loader import render_to_string
+#from .tasks import hello, printer
+
 
 
 @login_required
@@ -14,6 +16,7 @@ def category_detail(request, category_id):
     category = get_object_or_404(Category, id=category_id)
     posts = category.post_set.all()  # Получаем все посты в этой категории
     return render(request, 'category_detail.html', {'category': category, 'posts': posts})
+
 
 @login_required
 def subscribe_to_category(request, category_id):
@@ -26,6 +29,7 @@ def subscribe_to_category(request, category_id):
         category.subscribers.add(user)  # Подписка
 
     return redirect('category_detail', category_id=category.id)  # Перенаправление на страницу категории
+
 
 def news_list(request):
     post_news = Post.objects.order_by('created_at')
@@ -103,3 +107,6 @@ def post_delete(request, pk):
 #     category = get_object_or_404(Category, id=category_id)
 #     posts = category.post_set.all()  # Получаем все посты в этой категории
 #     return render(request, 'category_detail.html', {'category': category, 'posts': posts})
+
+
+

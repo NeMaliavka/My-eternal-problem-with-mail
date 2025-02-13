@@ -5,12 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ebed1191-46a8-4667-9e7e-9100057d7879" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/news/management/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/news/management/commands/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/news/management/commands/runapscheduler.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SkillFactoryProject/celery.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/news/tasks.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SkillFactoryProject/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/SkillFactoryProject/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SkillFactoryProject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/SkillFactoryProject/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/news/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/news/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SkillFactoryProject/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/SkillFactoryProject/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/news/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/news/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/news/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/news/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -2,6 +2,7 @@ from django.contrib import admin
 from django.urls import path
 from django.urls import include
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('protect.urls')),
@@ -9,4 +10,5 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
     path('posts/', include('news.urls')),
     path('accounts/', include('allauth.urls')),
+
 ]
