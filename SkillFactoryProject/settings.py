@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'news',
+    'news.apps.NewsConfig',
     'accounts',
     'django_filters',
     'sign',
@@ -57,7 +57,9 @@ INSTALLED_APPS = [
 
     'allauth.socialaccount.providers.google',
 
-    #'news.apps.NewsConfig',
+    'django_apscheduler',
+
+
 ]
 
 MIDDLEWARE = [
@@ -180,6 +182,13 @@ DEFAULT_FROM_EMAIL = EMAIL_HOST_USER+'@yandex.ru'
 
 SITE_ID = 1
 SITE_URL = 'http://127.0.0.1:8000'
+
+# формат даты, которую будет воспринимать наш задачник (вспоминаем модуль по фильтрам)
+APSCHEDULER_DATETIME_FORMAT = "N j, Y, f:s a"
+
+# если задача не выполняется за 25 секунд, то она автоматически снимается, можете поставить время побольше, но как правило, это сильно бьёт по производительности сервера
+APSCHEDULER_RUN_NOW_TIMEOUT = 25  # Seconds
+
 
 print('**************************')
 print(DEFAULT_FROM_EMAIL)
